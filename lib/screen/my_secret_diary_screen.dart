@@ -19,7 +19,7 @@ class _MySecretDiaryScreenState extends State<MySecretDiaryScreen> {
         backgroundColor: Colors.green[300],
       ),
       body: Center(
-        child: Text('Secret diary'),
+        child: Text('My secret diary'),
       ),
     );
   }
