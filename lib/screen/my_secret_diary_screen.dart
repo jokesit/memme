@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MySecretDiaryScreen extends StatefulWidget {
-  const MySecretDiaryScreen({super.key});
+  final bool isLogIn;
+  const MySecretDiaryScreen({super.key, required this.isLogIn});
 
   @override
   State<MySecretDiaryScreen> createState() => _MySecretDiaryScreenState();
@@ -19,7 +20,11 @@ class _MySecretDiaryScreenState extends State<MySecretDiaryScreen> {
         backgroundColor: Colors.green[300],
       ),
       body: Center(
-        child: Text('My secret diary'),
+        child: widget.isLogIn
+            ? const Text(
+                'My secret diary',
+              )
+            : const Text('Please login to your account'),
       ),
     );
   }

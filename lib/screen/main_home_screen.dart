@@ -4,7 +4,8 @@ import 'package:memme/screen/publish_diary_screen.dart';
 import 'package:memme/utilities/app_bottom_navigation_bar.dart';
 
 class MainHomeScreen extends StatefulWidget {
-  const MainHomeScreen({super.key});
+  final bool isLogIn;
+  const MainHomeScreen({super.key, required this.isLogIn});
 
   @override
   State<MainHomeScreen> createState() => _MainHomeScreenState();
@@ -18,15 +19,18 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
     });
   }
 
-  final List<Widget> _pages = [
-    const PublishDiaryScreen(),
-    const MySecretDiaryScreen()
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final List<Widget> pages = [
+      PublishDiaryScreen(
+        isLogIn: widget.isLogIn,
+      ),
+      MySecretDiaryScreen(
+        isLogIn: widget.isLogIn,
+      )
+    ];
     return Scaffold(
-      body: _pages[_selectIndex],
+      body: pages[_selectIndex],
       bottomNavigationBar: AppBottomNavigationBar(onTapChange: (int int) {
         navigateBottomBar(int);
       }),

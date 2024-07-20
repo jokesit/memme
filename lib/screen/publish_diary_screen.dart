@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PublishDiaryScreen extends StatefulWidget {
-  const PublishDiaryScreen({super.key});
+  final bool isLogIn;
+  const PublishDiaryScreen({super.key, required this.isLogIn});
 
   @override
   State<PublishDiaryScreen> createState() => _PublishDiaryScreenState();
